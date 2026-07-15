@@ -616,3 +616,8 @@ async def refresh_access_token(
     new_access_token = jwt_manager.create_access_token({"user_id": user_id})
 
     return TokenRefreshResponseSchema(access_token=new_access_token)
+
+
+@router.get("/hello/")
+def say_hello():
+    return "Hello world"
